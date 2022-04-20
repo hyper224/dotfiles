@@ -1,0 +1,16 @@
+{
+	"workbench.startupEditor": "none",
+	"workbench.iconTheme": "Monokai Classic Icons",
+	"editor.fontFamily": "'JetBrainsMono Nerd Font Mono','Droid Sans Mono', 'monospace', monospace",
+	"workbench.productIconTheme": "fluent-icons",
+	"editor.minimap.enabled": false,
+	"[jsonc]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"files.trimTrailingWhitespace": true,
+
+	// vscodevim
+	"vim.useSystemClipboard": true,
+	"vim.useCtrlKeys": false,
+	"vim.highlightedyank.enable": true
+}
