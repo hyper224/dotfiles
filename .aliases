@@ -6,7 +6,7 @@ alias yt-playlist="yt-dlp -o '%(playlist_index)s %(title)s.%(ext)s'"
 alias code="codium"
 
 # dotfiles
-alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+alias config="git --git-dir=$HOME/dotfiles/ --work-tree=$HOME"
 
 # Human-readable disk usage.
 alias dfh="df -Tha --total"
