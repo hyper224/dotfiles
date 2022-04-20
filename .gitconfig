@@ -1,0 +1,8 @@
+[init]
+	defaultBranch = main
+[user]
+	email = loothy673@gmail.com
+	name = hyper224
+[core]
+	editor = codium --wait
+	autocrlf = input
