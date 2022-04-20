@@ -1,0 +1,16 @@
+# yt-dlp
+alias yt-audio="yt-dlp -f 'ba' -x --audio-format mp3"
+alias yt-playlist="yt-dlp -o '%(playlist_index)s %(title)s.%(ext)s'"
+
+#  vscodium
+alias code="codium"
+
+# dotfiles
+alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+
+# Human-readable disk usage.
+alias dfh="df -Tha --total"
+
+# Reload shell.
+ alias reload="exec $SHELL -l"
+
