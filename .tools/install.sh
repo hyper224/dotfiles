@@ -16,7 +16,7 @@ rsync --recursive --verbose --exclude '.git' dotfiles-tmp/ $HOME/
 rm --recursive --force dotfiles-tmp
 
 # configuration
-# config config --local status.showUntrackedFiles no
+config config --local status.showUntrackedFiles no
 # config push --set-upstream origin main
 
 # usage
