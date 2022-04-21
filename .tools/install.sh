@@ -16,10 +16,7 @@ rsync --recursive --verbose --exclude '.git' dotfiles-tmp/ $HOME/
 rm --recursive --force dotfiles-tmp
 
 # configuration
-if [ -f "$HOME/.aliases" ]; then
-    source "$HOME/.aliases"
-    config config --local status.showUntrackedFiles no
-fi
+# config config --local status.showUntrackedFiles no
 # config push --set-upstream origin main
 
 # usage
