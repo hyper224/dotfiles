@@ -138,6 +138,8 @@ install_package codium install_vscodium
 install_package nvim install_neovim
 install_package fzf install_fzf
 
+vscodium_user_settings
+
 command -v codium >/dev/null && install_vscodium_extensions
 
 command -v nvim >/dev/null
