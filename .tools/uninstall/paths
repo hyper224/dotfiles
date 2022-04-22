@@ -1,0 +1,16 @@
+.aria2
+.config/alacritty
+.config/bat
+.config/lf
+.config/mpv
+.config/yt-dlp
+.local/bin/open
+.aliases
+.gitconfig
+.lf_icons
+.p10k_zsh
+.profile
+.zshrc
+README.md
+dotfiles
+.tools
