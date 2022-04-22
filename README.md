@@ -2,9 +2,9 @@
 
 Prerequisite
 
-- Rsync
+- `rsync`
 
-Install dotfiles with single command
+Install dotfiles
 
 ```sh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/hyper224/dotfiles/main/.tools/install.sh)"
@@ -16,4 +16,10 @@ Configuration
 
 ```sh
 config config --local status.showUntrackedFiles no
+```
+
+Remove dotfiles
+
+```sh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/hyper224/dotfiles/main/.tools/uninstall/uninstall.sh)"
 ```
