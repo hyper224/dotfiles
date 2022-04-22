@@ -40,21 +40,22 @@ fi
 # enable usb support in virutalbox
 command -v virtualbox >/dev/null && sudo adduser $USER vboxusers
 
-install_vscodium(){
-  wget -qO - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg \
-	  | gpg --dearmor \
-	  | sudo dd of=/usr/share/keyrings/vscodium-archive-keyring.gpg
+install_vscode(){
+	sudo apt-get install wget gpg
+	wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+	sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
+	sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
+	rm -f packages.microsoft.gpg
 
-  echo 'deb [ signed-by=/usr/share/keyrings/vscodium-archive-keyring.gpg ] https://download.vscodium.com/debs vscodium main' \
-	  | sudo tee /etc/apt/sources.list.d/vscodium.list
+	sudo apt install -y apt-transport-https
+	sudo apt update -y
+	sudo apt install -y code
 
-  sudo apt update -y && sudo apt install -y codium
-}
-
-install_vscodium_extensions(){
-	while read extension; do
-		codium --install-extension $extension --force
-	done < "$HOME/.tools/vscodium_extensions"
+	# uninstall vscode
+	# sudo apt-get remove code
+	# remov all user settings
+	# rm -rf ~/.config/Code 
+	# rm -rf ~/.vscode
 }
 
 install_neovim(){
@@ -92,7 +93,6 @@ install_nvoid(){
 
 	nvim -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 	nvim
-
 
 	# uninstall nvoid
 	# rm -rf ~/.config/nvim/
@@ -134,11 +134,9 @@ install_package(){
 
 set_default_shell
 
-install_package codium install_vscodium
+install_package code install_vscode
 install_package nvim install_neovim
 install_package fzf install_fzf
-
-command -v codium >/dev/null && install_vscodium_extensions
 
 command -v nvim >/dev/null
 if [ $? -eq 0 ]; then
