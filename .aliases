@@ -2,9 +2,6 @@
 alias yt-audio="yt-dlp -f 'ba' -x --audio-format mp3"
 alias yt-playlist="yt-dlp -o '%(playlist_index)s %(title)s.%(ext)s'"
 
-#  vscodium
-alias code="codium"
-
 # dotfiles
 alias config="git --git-dir=$HOME/dotfiles/ --work-tree=$HOME"
 
