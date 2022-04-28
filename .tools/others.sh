@@ -11,7 +11,7 @@ sudo apt install -y bat && ln -s /usr/bin/batcat ~/.local/bin/bat
 sudo apt install -y fd-find && ln -s $(command -v fdfind) ~/.local/bin/fd
 
 # directory for mpv video recorded clips
-mkdir -p ~/Video/mpv_videoclips
+mkdir -p ~/Videos/mpv_videoclips
 
 # replace user with username
 sed -i "s/\<user\>/$(whoami)/" "$HOME/.config/mpv/script-opts/videoclip.conf"
@@ -54,7 +54,7 @@ install_vscode(){
 	# uninstall vscode
 	# sudo apt-get remove code
 	# remov all user settings
-	# rm -rf ~/.config/Code 
+	# rm -rf ~/.config/Code
 	# rm -rf ~/.vscode
 }
 
