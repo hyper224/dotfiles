@@ -19,7 +19,7 @@ if [ ! -f "$HOME/.local/bin/lf" ]; then
 fi
 
 # automatic CPU speed & power optimizer for linux
-install_auto-cpufreq(){
+install_auto_cpufreq(){
 	if [ ! -d "$HOME/auto-cpufreq" ]; then
 		git clone https://github.com/AdnanHodzic/auto-cpufreq.git
 		cd auto-cpufreq && sudo ./auto-cpufreq-installer
@@ -146,7 +146,7 @@ install_package code install_vscode
 install_package nvim install_neovim
 install_package fzf install_fzf
 
-install_auto-cpufreq
+install_auto_cpufreq
 
 command -v nvim >/dev/null
 if [ $? -eq 0 ]; then
