@@ -34,7 +34,7 @@ sudo apt install -y python3-pip && python3 -m pip install -U pipenv yt-dlp
 
 download_nerdfonts(){
 	mkdir -p "$HOME/.local/share/fonts/nerdfonts"
-	sudo aria2c --dir=${HOME}/.local/share/fonts/nerdfonts -i "$HOME/.tools/nerdfonts"
+	sudo aria2c --continue=true --max-concurrent-downloads=1 --auto-save-interval=5 --auto-file-renaming=false --dir=${HOME}/.local/share/fonts/nerdfonts -i "$HOME/.tools/nerdfonts"
 
 	# generate fonts cache
 	fc-cache -f -v
