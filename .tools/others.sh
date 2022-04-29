@@ -21,6 +21,15 @@ if [ ! -f "$HOME/.local/bin/lf" ]; then
 	curl -L https://github.com/gokcehan/lf/releases/latest/download/lf-linux-amd64.tar.gz | tar xzC ~/.local/bin
 fi
 
+# automatic CPU speed & power optimizer for linux
+install_auto-cpufreq(){
+	if [ ! -d "$HOME/auto-cpufreq" ]; then
+		git clone https://github.com/AdnanHodzic/auto-cpufreq.git
+		cd auto-cpufreq && sudo ./auto-cpufreq-installer
+		sudo auto-cpufreq --install
+	fi
+}
+
 # pip3, pipenv, yt-dlp
 python3 -m pip install --upgrade pip
 sudo apt install -y python3-pip && python3 -m pip install -U pipenv yt-dlp
@@ -137,6 +146,8 @@ set_default_shell
 install_package code install_vscode
 install_package nvim install_neovim
 install_package fzf install_fzf
+
+install_auto-cpufreq
 
 command -v nvim >/dev/null
 if [ $? -eq 0 ]; then
