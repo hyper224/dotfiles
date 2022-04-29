@@ -34,14 +34,14 @@ install_auto-cpufreq(){
 python3 -m pip install --upgrade pip
 sudo apt install -y python3-pip && python3 -m pip install -U pipenv yt-dlp
 
-# download nerdfonts
-if [ ! -d "$HOME/.local/share/fonts/nerdfonts" ]; then
+
+download_nerdfonts(){
 	mkdir -p "$HOME/.local/share/fonts/nerdfonts"
 	sudo aria2c --dir=${HOME}/.local/share/fonts/nerdfonts -i "$HOME/.tools/nerdfonts"
 
 	# generate fonts cache
 	fc-cache -f -v
-fi
+}
 
 # verify if font was cached successfully
 # fc-list | grep "font-name"
@@ -140,6 +140,8 @@ install_package(){
 # gstreamer1.0-plugins-ugly
 # gstreamer1.0-plugins-bad
 # ubuntu-restricted-extras
+
+download_nerdfonts
 
 set_default_shell
 
