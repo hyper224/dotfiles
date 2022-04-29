@@ -15,6 +15,8 @@ git clone --separate-git-dir=$HOME/dotfiles https://github.com/hyper224/dotfiles
 rsync --recursive --verbose --exclude '.git' dotfiles-tmp/ $HOME/
 rm --recursive --force dotfiles-tmp
 
+git --git-dir=$HOME/dotfiles/ --work-tree=$HOME config --local status.showUntrackedFiles no
+
 # configuration
 # config config --local status.showUntrackedFiles no
 # config push --set-upstream origin main
