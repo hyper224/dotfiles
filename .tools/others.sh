@@ -1,8 +1,5 @@
 #!/usr/bin/env sh
 
-if [ ! -d "$HOME/.local/bin" ]; then
-	mkdir -p "$HOME/.local/bin"
-fi
 
 # bat
 sudo apt install -y bat && ln -s /usr/bin/batcat ~/.local/bin/bat
