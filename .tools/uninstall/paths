@@ -8,7 +8,7 @@
 .aliases
 .gitconfig
 .lf_icons
-.p10k_zsh
+.p10k.zsh
 .profile
 .zshrc
 README.md
