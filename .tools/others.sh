@@ -12,6 +12,7 @@ mkdir -p ~/Videos/mpv_videoclips
 
 # replace user with username
 sed -i "s/\<user\>/$(whoami)/" "$HOME/.config/mpv/script-opts/videoclip.conf"
+sed -i "s/\<user\>/$(whoami)/" "$HOME/.config/mpv/mpv.conf"
 
 # lf
 if [ ! -f "$HOME/.local/bin/lf" ]; then
