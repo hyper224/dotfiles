@@ -27,4 +27,15 @@ git --git-dir=$HOME/dotfiles/ --work-tree=$HOME config --local status.showUntrac
 # config commit -m 'Add gitconfig'
 # config push
 
+mpv_required(){
+    # directory for mpv video recorded clips
+    mkdir -p ~/Videos/mpv_videoclips
+
+    # replace user with username
+    sed -i "s/\<user\>/$(whoami)/" "$HOME/.config/mpv/script-opts/videoclip.conf"
+    sed -i "s/\<user\>/$(whoami)/" "$HOME/.config/mpv/mpv.conf"
+}
+
+mpv_required
+
 . "$HOME/.tools/setup.sh"
