@@ -1,6 +1,6 @@
 # yt-dlp
 alias yt-audio="yt-dlp -f 'ba' -x --audio-format mp3"
-alias yt-playlist="yt-dlp -o '%(playlist_index)s %(title)s.%(ext)s'"
+alias yt-playlist="yt-dlp -o '%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s'"
 
 # dotfiles
 alias config="git --git-dir=$HOME/dotfiles/ --work-tree=$HOME"
@@ -10,4 +10,3 @@ alias dfh="df -Tha --total"
 
 # Reload shell.
  alias reload="exec $SHELL -l"
-
