@@ -1,18 +1,10 @@
 #!/usr/bin/env sh
 
-
 # bat
 sudo apt install -y bat && ln -s /usr/bin/batcat ~/.local/bin/bat
 
 # fd-find
 sudo apt install -y fd-find && ln -s $(command -v fdfind) ~/.local/bin/fd
-
-# directory for mpv video recorded clips
-mkdir -p ~/Videos/mpv_videoclips
-
-# replace user with username
-sed -i "s/\<user\>/$(whoami)/" "$HOME/.config/mpv/script-opts/videoclip.conf"
-sed -i "s/\<user\>/$(whoami)/" "$HOME/.config/mpv/mpv.conf"
 
 # lf
 if [ ! -f "$HOME/.local/bin/lf" ]; then
@@ -144,14 +136,14 @@ download_nerdfonts
 set_default_shell
 
 install_package code install_vscode
-install_package nvim install_neovim
+# install_package nvim install_neovim
 install_package fzf install_fzf
 
 install_auto_cpufreq
 
-command -v nvim >/dev/null
-if [ $? -eq 0 ]; then
-	if [ ! -d "$HOME/.config/nvim" ]; then
-		install_nvoid
-	fi
-fi
+# command -v nvim >/dev/null
+# if [ $? -eq 0 ]; then
+# 	if [ ! -d "$HOME/.config/nvim" ]; then
+# 		install_nvoid
+# 	fi
+# fi
