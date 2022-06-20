@@ -155,7 +155,7 @@ function M.wait_jump()
     if timeout < 10 then
         msg = "0"
     end
-    msg = wait_msg.."--"..(math.modf(pl_percent*10)/10).."%--continue?"..msg..timeout.."[y/N]"
+    msg = wait_msg.."--"..(math.modf(pl_percent*10)/10).."%--continue?"..msg..timeout.."[y]"
     M.show(msg, 1000)
 end
 
