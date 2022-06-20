@@ -8,7 +8,7 @@ local options = require 'mp.options'
 local M = {}
 
 local o = {
-    save_period = 30
+    save_period = 10
 }
 options.read_options(o)
 
@@ -126,7 +126,7 @@ function M.pause(name, paused)
     end
 end
 
-local timeout = 15 
+local timeout = 15
 function M.wait_jump()
     timeout = timeout - 1
     if(timeout < 1) then
