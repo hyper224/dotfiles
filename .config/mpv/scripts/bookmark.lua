@@ -8,7 +8,7 @@ local options = require 'mp.options'
 local M = {}
 
 local o = {
-    save_period = 10
+    save_period = 30
 }
 options.read_options(o)
 
@@ -126,7 +126,7 @@ function M.pause(name, paused)
     end
 end
 
-local timeout = 10 
+local timeout = 15 
 function M.wait_jump()
     timeout = timeout - 1
     if(timeout < 1) then
@@ -137,12 +137,12 @@ function M.wait_jump()
     if timeout < 10 then
         msg = "0"
     end
-    msg = wait_msg.."--"..(math.modf(pl_percent*10)/10).."%--continue?"..msg..timeout.."[Enter/n]"
+    msg = wait_msg.."--"..(math.modf(pl_percent*10)/10).."%--continue?"..msg..timeout.."[y/N]"
     M.show(msg, 1000)
 end
 
 function M.bind_key()
-    mp.add_key_binding('Enter', 'resume_yes', M.key_jump)
+    mp.add_key_binding('y', 'resume_yes', M.key_jump)
     mp.add_key_binding('n', 'resume_not', function()
         M.unbind_key()
         M.wait_jump_timer:kill()
@@ -150,7 +150,7 @@ function M.bind_key()
 end
 
 function M.unbind_key()
-    mp.remove_key_binding('Enter')
+    mp.remove_key_binding('y')
     mp.remove_key_binding('n')
 end
 
@@ -221,5 +221,4 @@ function M.exe()
     mp.add_hook("on_unload", 50, M.save_mark)
     mp.observe_property("pause", "bool", M.pause)
 end
-
 mp.register_event("file-loaded", M.exe)
