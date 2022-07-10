@@ -1,8 +1,8 @@
 [init]
 	defaultBranch = main
 [user]
-	email = loothy673@gmail.com
-	name = hyper224
+	email = email
+	name = username
 [core]
 	editor = code --wait
 	autocrlf = input
