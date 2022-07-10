@@ -1,7 +1,18 @@
 #!/usr/bin/env sh
 
-command -v zsh >/dev/null
-if [ $? -eq 0 ]; then
+make_zsh_default_shell(){
+    # If this user's login shell is already "zsh", do not attempt to switch.
+    if [ "$(basename -- "$SHELL")" = "zsh" ]; then
+        return
+    else
+        chsh -s zsh "${USER}"
+    fi
+}
+
+
+if command -v zsh >/dev/null; then
+    make_zsh_default_shell
+    
     if [ ! -d "$HOME/.oh-my-zsh" ]; then
         # ohmyzsh installation
         sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
