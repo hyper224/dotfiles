@@ -108,8 +108,6 @@ install_lvim(){
         # rm -rf ~/.local/share/nvim/
 		
     fi
-
-
 }
 
 
