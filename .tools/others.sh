@@ -91,22 +91,16 @@ install_lvim(){
 
         bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh) --no-install-dependencies
 
-        #lvim -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
-		
 		if command -v lvim > /dev/null; then
-			if [ -f "$HOME/.aliases" ]; then
-				echo -ne '\nalias nvim="lvim"' >> "$HOME/.aliases"
-				lvim
-			elif
-				echo -ne '\nalias nvim="lvim"' >> "$HOME/.zsh"
-				lvim
-			fi
+            echo -ne '\nalias nvim="lvim"' >> "$HOME/.aliases"
+            # install plugins quietly
+            # lvim -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+            lvim
 		fi
-		
+
         # uninstall lvim
-        # rm -rf ~/.config/nvim/
-        # rm -rf ~/.local/share/nvim/
-		
+        # bash ~/.local/share/lunarvim/lvim/utils/installer/uninstall.sh
+
     fi
 }
 
