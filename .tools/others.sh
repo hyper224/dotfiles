@@ -120,7 +120,7 @@ install_fzf(){
 # gstreamer1.0-plugins-bad
 # ubuntu-restricted-extras
 
+install_fzf
 download_nerdfonts
 install_vscode
-
 install_auto_cpufreq
