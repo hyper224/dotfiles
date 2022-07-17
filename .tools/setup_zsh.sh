@@ -2,10 +2,10 @@
 
 make_zsh_default_shell(){
     # If this user's login shell is already "zsh", do not attempt to switch.
-    if [ "$(basename -- "$SHELL")" = "zsh" ]; then
+    if [ "$(basename -- $SHELL)" = "zsh" ]; then
         return
     else
-        chsh -s zsh "${USER}"
+        sudo chsh -s "$(command -v zsh)" "${USER}"
     fi
 }
 
